@@ -1,0 +1,47 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="">
+                <img src="{{ url_for('static', filename='images/itmo_logo.png') }}" class="itmo_img">
+            </div>
+        </header>
+        <div class="main">
+            <div class="main_left">
+                <img src="{{ url_for('static', filename='images/me.jpg') }}" class="me_img">
+            </div>
+            <div class="main_right">
+                <div class="main_right_name">
+                    Ryumin Danil
+                </div>
+                <div class="main_right_university">
+                    Information Security Student at the ITMO University
+                </div>
+                <div class="main_right_mail">
+                    ryumin_danil@icloud.com
+                </div>
+                <hr class="main_right_hr">
+                <div class="main_right_ul">
+                    <ul>
+                        <li>
+                            Born in Vologda, received a bachelor's degree in Yaroslavl, and now studies and lives in Saint-Petersburg
+                        </li>
+                        <li>
+                            Studies Information Security at the ITMO University
+                        </li>
+                        <li>
+                            Interested in development of mobile applications for iOS
+                        </li>
+                        <li>
+                            On the photo is me :)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
