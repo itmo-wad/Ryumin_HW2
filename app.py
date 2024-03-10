@@ -1,18 +1,20 @@
 from flask import Flask, redirect, render_template, url_for
 from flask_httpauth import HTTPBasicAuth
+import pymongo
+
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+db = client["usersDB"]
+col = db["users"]
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
 
-users = {
-    "user": "123",
-    "guest": "qwe"
-}
-
 @auth.verify_password
 def verify_password(username, password):
-    if username in users:
-        return users.get(username) == password
+    users = col.find()
+    for user in users:
+        if username == user["username"]:
+            return user["password"] == password
     return False
 
 @app.route('/')
